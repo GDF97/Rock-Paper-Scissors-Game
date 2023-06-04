@@ -6,23 +6,11 @@ const computerScore = document.getElementById("computerScore");
 
 let buttonsChoice = document.querySelectorAll("button");
 
-let scissorsIcon = document.createElement("i");
-scissorsIcon.classList.add("fa-solid", "fa-hand-scissors", "fa-2xl");
+let scissorsIcon = `<i class="fa-solid fa-hand-scissors fa-2xl"></i>`;
 
-let rockIcon = document.createElement("i");
-rockIcon.classList.add("fa-solid", "fa-hand-fist", "fa-2x");
+let rockIcon = `<i class="fa-solid fa-hand-fist fa-2xl"></i>`;
 
-let paperIcon = document.createElement("i");
-paperIcon.classList.add("fa-solid", "fa-hand", "fa-2xl");
-
-let scissorsIconComputer = document.createElement("i");
-scissorsIconComputer.classList.add("fa-solid", "fa-hand-scissors", "fa-2xl");
-
-let rockIconComputer = document.createElement("i");
-rockIconComputer.classList.add("fa-solid", "fa-hand-fist", "fa-2x");
-
-let paperIconComputer = document.createElement("i");
-paperIconComputer.classList.add("fa-solid", "fa-hand", "fa-2xl");
+let paperIcon = `<i class="fa-solid fa-hand fa-2xl"></i>`;
 
 let player;
 let computer;
@@ -38,28 +26,28 @@ buttonsChoice.forEach((button) => {
     computerChoiceDisplay.innerHTML = "";
     player = button.value;
     if (player == "rock") {
-      playerChoiceDisplay.append(rockIcon);
+      playerChoiceDisplay.innerHTML = rockIcon;
     }
 
     if (player == "paper") {
-      playerChoiceDisplay.append(paperIcon);
+      playerChoiceDisplay.innerHTML = paperIcon;
     }
 
     if (player == "scissors") {
-      playerChoiceDisplay.append(scissorsIcon);
+      playerChoiceDisplay.innerHTML = scissorsIcon;
     }
 
     computerTurn();
     if (computer == "rock") {
-      computerChoiceDisplay.append(rockIconComputer);
+      computerChoiceDisplay.innerHTML = rockIcon;
     }
 
     if (computer == "paper") {
-      computerChoiceDisplay.append(paperIconComputer);
+      computerChoiceDisplay.innerHTML = paperIcon;
     }
 
     if (computer == "scissors") {
-      computerChoiceDisplay.append(scissorsIconComputer);
+      computerChoiceDisplay.innerHTML = scissorsIcon;
     }
 
     resultDisplay.textContent = checkWinner();
